@@ -1,5 +1,0 @@
-
-
-
-![SVG](./keyboard-layout.svg)
-
