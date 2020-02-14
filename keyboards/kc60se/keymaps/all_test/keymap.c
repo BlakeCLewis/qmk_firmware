@@ -18,12 +18,10 @@
 
 /* test all possible keys */
 
-enum layer_names {
-    _BL,
-    _FL
-};
+enum layer_names { _BL, _FL };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    // clang-format off
     [_BL] = LAYOUT(
         KC_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_GRV, \
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC, \
@@ -38,9 +36,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______, NK_TOGG, _______, _______, _______, _______, _______, _______, \
         _______, _______, _______,                   _______,                                     _______, _______, _______, _______ \
     )
+    // clang-format on
 };
 
-/* BL 
+/* BL
  *.--------------------------------------------------------------------------.
  *| esc|  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |  0 |  - |  = |bcsp|  ` |
  *|--------------------------------------------------------------------------|
@@ -50,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *|--------------------------------------------------------------------------|
  *| lshft| \  |  z |  x |  c |  v |  b |  n |  m |  , |  . |  / |rshft|mo(FL)|
  *|--------------------------------------------------------------------------|
- *| lgui| lalt|mo(FL)|             space            |mo(FL)|rgui |ralt | rctl| 
+ *| lgui| lalt|mo(FL)|             space            |mo(FL)|rgui |ralt | rctl|
  *'--------------------------------------------------------------------------'
  * FL
  *.--------------------------------------------------------------------------.

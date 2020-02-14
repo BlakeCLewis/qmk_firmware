@@ -18,13 +18,10 @@
 
 /* WORKMAN */
 
-enum layer_names {
-    _BL,
-    _FL,
-    _TK
-};
+enum layer_names { _BL, _FL, _TK };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    // clang-format off
     [_BL] = LAYOUT_60_ansi_split_bs_rshift(
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_GRV, \
         KC_TAB,  KC_Q,    KC_D,    KC_R,    KC_W,    KC_B,    KC_J,    KC_F,    KC_U,    KC_P,    KC_SCLN, KC_LBRC, KC_RBRC, KC_BSPC, \
@@ -46,6 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
         TG(_TK), _______, _______,                   _______,                                     _______, _______, _______, _______ \
     )
+    // clang-format on
 };
 
 /* BL
