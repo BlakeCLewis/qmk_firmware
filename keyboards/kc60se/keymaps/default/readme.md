@@ -5,7 +5,7 @@
 	* [Backspace] is move down a row replacing [  \\  ]
 	* a dip switch toggles the default: Delete or Backspace, Fn invokes other
 	* 2.75u right [  Shift  ] is split into 1.75u [Shift] and [Fn ]
-	* Caplock is replaced by Control. [FN ] [ Tab ] toggles Caplock, the led under Control toggles with Caplock.  
+	* Control replaces Caplock, [FN ] [ Tab ] toggles Caplock, led under Control toggles w/Caplock.  
 	* the botom row layout does not really define the HHKB, other than it is configurable
     	* HHKB Professional2
             ```
