@@ -13,21 +13,21 @@ BOOTLOADER = atmel-dfu
 
 # Build Options
 #   change yes to no to disable
-#
-BOOTMAGIC_ENABLE = no      # Virtual DIP switch configuration
-MOUSEKEY_ENABLE = yes       # Mouse keys
-EXTRAKEY_ENABLE = yes       # Audio control and System control
-CONSOLE_ENABLE = yes        # Console for debug
-COMMAND_ENABLE = yes        # Commands for debug and configuration
-# Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
-SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
-# if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
-NKRO_ENABLE = no            # USB Nkey Rollover
-BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality on B7 by default
-MIDI_ENABLE = no            # MIDI support
-UNICODE_ENABLE = no         # Unicode
-BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
-AUDIO_ENABLE = no           # Audio output on port C6
-FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
+NKRO_ENABLE = yes       # plugin usb while holding down Space+N, will toggle on NKRO and change persist
+BOOTMAGIC_ENABLE = lite # required for Space+N (NKRO) and Space+B (enter bootloarder)
+EXTRAKEY_ENABLE = yes   # required for volume controls KC_VOLU, KC_VOLD, KC_MUTE
+BACKLIGHT_ENABLE = yes  # enable backlit keycap leds
 
-LAYOUTS = 60_ansi 60_ansi_split_bs_rshift
+CONSOLE_ENABLE = no     # use 'hid_listen' program, (works with NKRO toggled off)
+COMMAND_ENABLE = no     # lshift + rshift + N (switch from 6KRO to NKRO), have to use SPACE+N to get back  
+
+# Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
+SLEEP_LED_ENABLE = no   # breathing sleep LED during USB suspend
+MOUSEKEY_ENABLE = no    # mouse keys
+MIDI_ENABLE = no        # mIDI support
+UNICODE_ENABLE = no     # unicode
+BLUETOOTH_ENABLE = no   # Adafruit EZ-Key HID
+AUDIO_ENABLE = no       # audio output on port C6
+FAUXCLICKY_ENABLE = no  # use buzzer to emulate clicky switches
+
+LAYOUTS = all iso ansi ansi_split_bs_rshift iso_split_rshift
