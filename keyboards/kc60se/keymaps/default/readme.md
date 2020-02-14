@@ -7,16 +7,19 @@
 * a dip switch toggles the default: Delete or Backspace, [Fn ] invokes non-default
 * 2.75u [  Shift  ] split into 1.75u [Shift] & [Fn ]
 * Control replaces Caplock, [FN ] [ Tab ] toggles Caplock, led under Control toggles w/Caplock
-* the botom row layout does not really define the HHKB, other than it is configurable
+* the botom row layout does not really define the HHKB, other than it is configurable and Meta can be assign values for your OS
+* HHKB Lite2
 
 ```
-		HHKB Professional2
-			    |Alt |Fn  |        Space          |Meta|Alt |
-			    |Meta|Alt |        Space          |Alt |Meta|
-			    |Fn  |Alt |        Space          |Alt |Meta|
-		HHKB Lite2
-			|Fn |Alt |Meta|        Space          |Meta|Alt |
-			|Fn |Meta|Alt |        Space          |ALt |Meta|
+    |Fn |Alt |Meta|        Space          |Meta|Alt |
+    |Fn |Meta|Alt |        Space          |ALt |Meta|
+```
+* HHKB Professional2
+
+```
+        |Alt |Fn  |        Space          |Meta|Alt |
+        |Meta|Alt |        Space          |Alt |Meta|
+        |Fn  |Alt |        Space          |Alt |Meta|
 ```
 ## Base Layer
 
