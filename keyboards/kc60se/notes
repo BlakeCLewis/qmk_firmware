@@ -1,0 +1,63 @@
+
+I wrote this stuff a few years ago and mechmerlin found it, made some changes and did a pull request.
+This board was not in QMK, but it was configured with QMK and referenced some google web site to configure, that software sucked for a beginner(me).
+I have a bit of electronics knowledge, I reverse out the board and configured QMK. Feels sort of weird claiming copyright on fill in the blanks.
+This PCB can nologer be bought. I bought a YD60MQ and hope to do some contributions on it. I though this could be an example of my work.
+
+-- KC60SE --
+
+No push button reset. It has a reset pad on a 6 pin header. I think the header can be used for spi.
+
+Changes
+
+  rules.mk:
+    BOOTMAGIC_ENABLE = lite # using default 0,0 esc
+    NKRO_ENABLE = yes       # NKRO works
+    BACKLIGHT_ENABLE = yes  # backlights not on a hw pwm pin, this works but throws warning, changing to 'software' only does on/off
+    MOUSEKEY_ENABLE  = no   # none of the current keymaps have mouse map
+    CONSOLE_ENABLE = no     # docs suggest that these be off,
+    COMMAND_ENABLE = no     # these were on, but IS_COMMAND() was not defined
+
+  config.h:
+    #define FORCE_NKRO      # NKRO is default
+    #define IS_COMMAND()    # defined in case user enables
+    #define MANUFACTURER    #remove NPKC as manufacturer, I remember making an educated guess on who made this board
+
+  kc60se.h:
+     add macros:             LAYOUT_60_iso, LAYOUT_60_iso_split_rshift, 
+     remove                  caps_led inline functions
+
+  kc60se.c:
+     remove extern inline caps_led declarations and function
+     add cap_led on/off function (all in one stanza, instead of 2 files and 5 stanza)
+
+  info.json:
+     goal: a layout to match each keymap.c still in progress. how to test?
+
+  kemaps/default/:
+    config.h    # removed, empty file
+    keymap.c    # T as KC_TOGG, on function layer
+                # I would like to remove the media keys ( KC_MPRV, KC_MPLY, KC_MNXT,KC_MSTP )
+                # they have never worked for me and the code was pulled when I was trying them out.
+                # I will find a windows computer to try them out....
+
+  kemaps added:
+     all_test:             all keys for testing and exploring board
+     60_ansi:              straight ansi board, a good place to start if that is what you want
+     60_iso:               straight iso board, a good place to start
+     colemak_split_bs_rs:  these 5 use splits variant which is a better place to start
+     dvorak_split_bs_rs:
+     qwerty_split_bs_rs:
+     workman_split_bs_rs:
+     iso__split_bs_rs:
+
+  Issues:
+    When 6KRO, can go into console/command with IS_COMMAND(), and use hid_listen, can use IS_COMMAND() to switch to NKRO;
+    (shift shift n) gets into NKRO, but while in NKRO mode,  no longer able to do ANY IS_COMMAND(), so, can't get back to 6KRO, without using bootmagic.
+
+  solution:
+    BOOTMAGIC_ENABLE = lite   # to enter bootloader, reducing user exposure to possible bootmagic issues
+    #define FORCE_NKRO        # NKRO default mode
+    NK_TOGGLE in keymap       # toggles NKRO <=> 6KRO, enabling 6KRO when needed;
+    bootmagic lite and nk_toggle allows disabling of COMMAND/CONSOLE which still does not work when in NKRO mode
+

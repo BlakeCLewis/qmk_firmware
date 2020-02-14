@@ -30,4 +30,4 @@ BLUETOOTH_ENABLE = no   # Adafruit EZ-Key HID
 AUDIO_ENABLE = no       # audio output on port C6
 FAUXCLICKY_ENABLE = no  # use buzzer to emulate clicky switches
 
-LAYOUTS = all iso ansi ansi_split_bs_rshift iso_split_rshift
+LAYOUTS = 60_all 60_iso 60_ansi 60_ansi_split_bs_rshift 60_iso_split_bs_rshift
