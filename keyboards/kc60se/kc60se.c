@@ -16,11 +16,11 @@
 
 #include "kc60se.h"
 
-void led_set_kb(uint8_t usb_led){
-    if(IS_LED_ON(usb_led,USB_LED_CAPS_LOCK)){
+void led_set_kb(uint8_t usb_led) {
+    if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
         setPinOutput(B2);
         writePinLow(B2);
-    }else{
+    } else {
         setPinInput(B2);
     }
     led_set_user(usb_led);
