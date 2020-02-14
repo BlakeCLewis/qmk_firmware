@@ -37,6 +37,8 @@
          `------------------------------------------------------------'
 ```
 ## Function Layer
+* Extra keys: (mprv, mply, mnxt)
+* I think the number pad * / - and + did not come on the Professional, but did on Lite
 
 ```
   ,--------------------------------------------------------------------------.
