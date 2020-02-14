@@ -53,10 +53,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define MATRIX_HAS_GHOST
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
+// #define LOCKING_SUPPORT_ENABLE
 
 /* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+// #define LOCKING_RESYNC_ENABLE
 
 /* debug: emable COMMAND_ENABLE and CONSOLE_ENABLE in rules.mk and run hid_listen */
 #define IS_COMMAND() ( \
