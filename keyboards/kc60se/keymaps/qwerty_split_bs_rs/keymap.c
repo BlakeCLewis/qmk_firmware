@@ -17,7 +17,7 @@
 
 /* QWERTY */
 
-enum layer_names { _BL, _FL, _TK };
+enum my_layers { _BL, _FL, _TK };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format off

@@ -18,7 +18,7 @@
 
 /* iso */
 
-enum layer_names { _BL, _FL };
+enum my_layers { _BL, _FL };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format off
