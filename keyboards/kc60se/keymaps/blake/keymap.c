@@ -19,13 +19,10 @@
 /* my evolution */
 
 // Defines names for use in layer keycodes and the keymap
-enum my_layers { _BL, _FL, _WK, _TK };
+enum layer_names { _BL, _FL, _WK, _TK };
 
 // Defines the keycodes used by our macros in process_record_user
-enum custom_keycodes {
-    KC60SE = SAFE_RANGE,
-    QMKURL
-};
+enum custom_keycodes { KC60SE = SAFE_RANGE, QMKURL };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format off
@@ -76,7 +73,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("https://qmk.fm/\n");
             } else {
                 // when keycode QMKURL is released
-
             }
             break;
     }
@@ -84,17 +80,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 /*
-void matrix_init_user(void) {
+void matrix_init_user(void) { }
 
-}
+void matrix_scan_user(void) { }
 
-void matrix_scan_user(void) {
+bool led_update_user(led_t led_state) { return true; }
 
-}
-
-bool led_update_user(led_t led_state) {
-    return true;
-}
 */
 
 /* BL
