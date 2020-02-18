@@ -20,6 +20,12 @@
 
 enum my_layers { _BL, _FL, _WK, _TK };
 
+// Defines the keycodes used by our macros in process_record_user
+enum custom_keycodes {
+    QMKBEST = SAFE_RANGE,
+    QMKURL
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format off
     [_BL] = LAYOUT_60_ansi_split_bs_rshift(

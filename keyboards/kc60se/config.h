@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    "@'l'@"
+#define MANUFACTURER    Unknown
 #define PRODUCT         kc60se
 #define DESCRIPTION     A custom 60% keyboard
 
@@ -39,9 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
 
-/* not a hardware pwm pin, works, but throws warning*/
 #define BACKLIGHT_PIN F5
-/* number of backlight levels */
 #define BACKLIGHT_LEVELS 6
 
 // #define BACKLIGHT_BREATHING
@@ -59,9 +57,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define LOCKING_RESYNC_ENABLE
 
 /* debug: emable COMMAND_ENABLE and CONSOLE_ENABLE in rules.mk and run hid_listen */
-#define IS_COMMAND() ( \
-  keyboard_report->mods == (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)) \
-)
 
 /* If defined, GRAVE_ESC will always act as ESC when CTRL is held.
  * This is userful for the Windows task manager shortcut (ctrl+shift+esc).
