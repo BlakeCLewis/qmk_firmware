@@ -23,7 +23,7 @@ enum my_layers { _BL, _FL };
 
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
-    QMKBEST = SAFE_RANGE,
+    KC60SE = SAFE_RANGE,
     QMKURL
 };
 
@@ -48,12 +48,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case QMKBEST:
+        case KC60SE:
             if (record->event.pressed) {
-                // when keycode QMKBEST is pressed
-                SEND_STRING("QMK is the best thing ever!");
+                // when keycode KC60SE is pressed
+                SEND_STRING("https://github.com/qmk/qmk_firmware/blob/master/keyboards/kc60se/");
             } else {
-                // when keycode QMKBEST is released
+                // when keycode KC60SE is released
             }
             break;
         case QMKURL:

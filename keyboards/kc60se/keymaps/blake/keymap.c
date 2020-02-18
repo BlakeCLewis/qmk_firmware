@@ -18,11 +18,12 @@
 
 /* my evolution */
 
+// Defines names for use in layer keycodes and the keymap
 enum my_layers { _BL, _FL, _WK, _TK };
 
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
-    QMKBEST = SAFE_RANGE,
+    KC60SE = SAFE_RANGE,
     QMKURL
 };
 
@@ -50,14 +51,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TG(_WK), _______, _______,                   _______,                                     _______, _______, _______, _______ \
     ),
     [_TK] = LAYOUT_60_ansi_split_bs_rshift(
-        _______, _______, _______, _______, _______, _______, _______, _______, KC_NO,   KC_PSLS, KC_PAST, KC_PMNS, _______, _______, _______, \
-        _______, _______, _______, _______, _______, _______, _______, _______, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_NO,    _______, \
+        KC60SE,  _______, _______, _______, _______, _______, _______, _______, KC_NO,   KC_PSLS, KC_PAST, KC_PMNS, _______, _______, _______, \
+        QMKURL,  _______, _______, _______, _______, _______, _______, _______, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_NO,    _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, KC_P4,   KC_P5,   KC_P6,   KC_PCMM, KC_PENT, \
         _______, _______, _______, _______, _______, _______, NK_TOGG, _______, KC_P1,   KC_P2,   KC_P3,   KC_PEQL, _______, \
         TG(_WK), _______, TG(_TK),                   _______,                                     _______, KC_P0,   KC_PDOT, _______ \
     )
     // clang-format on
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC60SE:
+            if (record->event.pressed) {
+                // when keycode KC60SE is pressed
+                SEND_STRING("https://github.com/qmk/qmk_firmware/blob/master/keyboards/kc60se/");
+            } else {
+                // when keycode QMKBEST is released
+            }
+            break;
+        case QMKURL:
+            if (record->event.pressed) {
+                // when keycode QMKURL is pressed
+                SEND_STRING("https://qmk.fm/\n");
+            } else {
+                // when keycode QMKURL is released
+
+            }
+            break;
+    }
+    return true;
+}
+
+/*
+void matrix_init_user(void) {
+
+}
+
+void matrix_scan_user(void) {
+
+}
+
+bool led_update_user(led_t led_state) {
+    return true;
+}
+*/
 
 /* BL
  *.--------------------------------------------------------------------------.

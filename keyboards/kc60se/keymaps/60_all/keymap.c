@@ -19,7 +19,6 @@
 /* test all possible keys */
 
 // Defines names for use in layer keycodes and the keymap
-
 enum my_layers { _BL, _FL };
 
 // Defines the keycodes used by our macros in process_record_user
@@ -54,7 +53,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // when keycode KC60SE is pressed
                 SEND_STRING("https://github.com/qmk/qmk_firmware/blob/master/keyboards/kc60se/");
             } else {
-                // when keycode QMKBEST is released
+                // when keycode KC60SE is released
             }
             break;
         case QMKURL:
@@ -63,7 +62,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("https://qmk.fm/\n");
             } else {
                 // when keycode QMKURL is released
-
             }
             break;
     }

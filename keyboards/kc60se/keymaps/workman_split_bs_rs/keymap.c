@@ -18,7 +18,14 @@
 
 /* WORKMAN */
 
+// Defines names for use in layer keycodes and the keymap
 enum my_layers { _BL, _FL, _TK };
+
+// Defines the keycodes used by our macros in process_record_user
+enum custom_keycodes {
+    KC60SE = SAFE_RANGE,
+    QMKURL
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format off
@@ -45,6 +52,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
     // clang-format on
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC60SE:
+            if (record->event.pressed) {
+                // when keycode KC60SE is pressed
+                SEND_STRING("https://github.com/qmk/qmk_firmware/blob/master/keyboards/kc60se/");
+            } else {
+                // when keycode KC60SE is released
+            }
+            break;
+        case QMKURL:
+            if (record->event.pressed) {
+                // when keycode QMKURL is pressed
+                SEND_STRING("https://qmk.fm/\n");
+            } else {
+                // when keycode QMKURL is released
+            }
+            break;
+    }
+    return true;
+}
+
+/*
+void matrix_init_user(void) {
+
+}
+
+void matrix_scan_user(void) {
+
+}
+
+bool led_update_user(led_t led_state) {
+    return true;
+}
+*/
 
 /* BL
  *.--------------------------------------------------------------------------.
