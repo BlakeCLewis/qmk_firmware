@@ -1,9 +1,9 @@
 # A test keymap for KC60SE
 
  Not a keymap to use, no modifiers except Enter and MO to activate FL layer.
- Every key,except Enter and MO, should output printable character.
-```
+ Any key on Base layer ,except Enter and MO, should output printable character.
  BL
+```
 .--------------------------------------------------------------------------.
 |  ~ |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |  0 |  - |  = |  ! |  ` |
 |--------------------------------------------------------------------------|
@@ -15,17 +15,19 @@
 |--------------------------------------------------------------------------|
 |   ) |  _  |  +  |               ^               |  |  |  {  |  }  |  :   | 
 '--------------------------------------------------------------------------'
+```
  CODE and DOCS user defined keys
 
- blon, blup are backlight full on, increment through backlight levels
+ blon, blup are backlight full on, and cycle levels
 
  vol are audio, duh
 
  NKRO - N-Key Rollover toggle, toggle on and persist through power cycle
-    Many computers, when interacting with bios(during boot process), can't see NKRO
-    So, toggle back to 6KRO, then you can interact with bios
+    Many computers when interacting with bios can't see NKRO,
+    so toggle back to 6KRO, then you can interact with bios
 
 FL
+```
 .--------------------------------------------------------------------------.
 |        |    |    |    |     |    |    |    |    |    |    |    |    |    |
 |--------------------------------------------------------------------------|
@@ -40,6 +42,7 @@ FL
 
  Matrix Positions K(row)(col)
  (row 0-4)(col 0-D)
+```
 .--------------------------------------------------------------------------.
 |K00 |K01 |K02 |K03 |K04 |K05 |K06 |K07 |K08 |K09 |K0A |K0B |K0C |K0D |K49 | < 15th position from matrix last row
 |--------------------------------------------------------------------------|
