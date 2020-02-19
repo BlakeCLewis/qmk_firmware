@@ -22,35 +22,35 @@
 enum layer_names { _BL, _FL };
 
 // Defines the keycodes used by our macros in process_record_user
-enum custom_keycodes { KC60SE = SAFE_RANGE, QMKURL };
+enum custom_keycodes { QMKBEST = SAFE_RANGE, QMKURL };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format off
     [_BL] = LAYOUT_all(
-        KC_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_GRV, \
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC, \
-        KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT, \
-        KC_LSFT, KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, MO(_FL), \
-        KC_LGUI, KC_LALT, MO(_FL),                   KC_SPC,                                      KC_RALT, KC_RGUI, KC_APP,  KC_RCTL \
+        KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_EXLM, KC_GRV,
+        KC_AT,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_LABK,
+        KC_DLR,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_QUES, KC_ENT,
+        KC_AMPR, KC_RABK, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_LPRN, MO(_FL),
+        KC_RPRN, KC_UNDS, KC_PLUS,                   KC_CIRC,                                     KC_DQUO, KC_LCBR, KC_RCBR  KC_COLN
     ),
     [_FL] = LAYOUT_all(
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_INS, \
-        KC_CAPS, KC60SE,  _______, _______, _______, _______, BL_ON,   BL_STEP, _______, _______, _______, _______, _______, KC_DEL, \
-        _______, QMKURL,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-        _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______, NK_TOGG, _______, _______, _______, _______, _______, _______, \
-        _______, _______, _______,                   _______,                                     _______, _______, _______, _______ \
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        KC_CAPS, QMKBEST, _______, _______, _______, _______, BL_ON,   BL_STEP, _______, _______, _______, _______, _______, _______, 
+        _______, QMKURL,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______, NK_TOGG, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______,                   _______,                                     _______, _______, _______, _______
     )
     // clang-format on
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC60SE:
+        case QMKBEST:
             if (record->event.pressed) {
-                // when keycode KC60SE is pressed
-                SEND_STRING("https://github.com/qmk/qmk_firmware/blob/master/keyboards/kc60se/");
+                // when keycode QMKBEST is pressed
+                SEND_STRING("QMK is the best thing ever!");
             } else {
-                // when keycode KC60SE is released
+                // when keycode QMKBEST is released
             }
             break;
         case QMKURL:
@@ -76,21 +76,21 @@ bool led_update_user(led_t led_state) { return true; }
 
 /* BL
  *.--------------------------------------------------------------------------.
- *| esc|  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |  0 |  - |  = |bcsp|  ` |
+ *|  ~ |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |  0 |  - |  = |  ! |  ` |
  *|--------------------------------------------------------------------------|
- *| tab  |  q |  w |  e |  r |  t |  y |  u |  i |  o |  p |  [ |  ] |  \    |
+ *|  @   |  q |  w |  e |  r |  t |  y |  u |  i |  o |  p |  [ |  ] |  #    |
  *|--------------------------------------------------------------------------|
- *| caps  |  a |  s |  d |  f |  g |  h |  j |  k |  l |  ; |  ' | #  |enter |
+ *|   $   |  a |  s |  d |  f |  g |  h |  j |  k |  l |  ; |  ' | %  |enter |
  *|--------------------------------------------------------------------------|
- *| lshft| \  |  z |  x |  c |  v |  b |  n |  m |  , |  . |  / |rshft|mo(FL)|
+ *|   &  | \  |  z |  x |  c |  v |  b |  n |  m |  , |  . |  / |  (  |mo(FL)|
  *|--------------------------------------------------------------------------|
- *| lgui| lalt|mo(FL)|               space           |ralt |rgui | app |rctl |
+ *|   ) |  _  |  +  |                ^               |  |  |  {  |  }  |  :  |
  *'--------------------------------------------------------------------------'
  * FL
  *.--------------------------------------------------------------------------.
  *|        |    |    |    |     |    |    |    |    |    |    |    |    |    |
  *|--------------------------------------------------------------------------|
- *| caps |CODE|    |    |    |    |blon|blup|    |    |    |    |    |  del  |
+ *| caps |CODE|    |    |    |    |blon|blup|    |    |    |    |    |       |
  *|--------------------------------------------------------------------------|
  *|       |DOCS|    |    |    |    |    |    |    |    |    |    |    |      |
  *|--------------------------------------------------------------------------|
