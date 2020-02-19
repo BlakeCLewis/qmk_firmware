@@ -1,13 +1,13 @@
 # HHKB:  The default keymap for KC60SE
 
-## What defines the HHKB (US layout):
+## Happy Hacker Keyboard (US layout):
 * [Esc] moves down replacing [ ~ ]
 * 2u [Backspace] split into [ \ ] and [ ~ ]
-* moving [Backspace] down a row to replace [  \  ]
+* move [Backspace] down a row to replace [  \  ]
 * a dip switch toggles the default: Delete or Backspace, [Fn ] invokes non-default
 * 2.75u [  Shift  ] split into 1.75u [Shift] & [Fn ]
 * Control replaces Caplock, [FN ] [ Tab ] toggles Caplock, led under Control toggles w/Caplock
-* the botom row layout does not really define the HHKB, other than it is configurable and Meta can be assign values for your OS
+* the botom row is configurable, the Meta key could be assigned a few values with dip switches, 
 * HHKB Lite2
 
 ```
@@ -21,6 +21,8 @@
         |Meta|Alt |        Space          |Alt |Meta|
         |Fn  |Alt |        Space          |Alt |Meta|
 ```
+* this PCB and keymap will support up to 8 keys on the bottom row with minimal editing.
+
 ## Base Layer
 
 ```
