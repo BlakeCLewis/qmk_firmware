@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Unknown
+#define MANUFACTURER    Blake Lewis
 #define PRODUCT         kc60se
 #define DESCRIPTION     A custom 60% keyboard
 
@@ -41,8 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define BACKLIGHT_PIN F5
 #define BACKLIGHT_LEVELS 6
-
-// #define BACKLIGHT_BREATHING
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
