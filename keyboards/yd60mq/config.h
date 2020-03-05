@@ -28,6 +28,8 @@
 #define BACKLIGHT_LEVELS 5
 #endif
 
+#define CAPS_BACKLIGHT_PIN F4
+
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
