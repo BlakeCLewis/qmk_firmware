@@ -36,9 +36,9 @@
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 //#define LOCKING_SUPPORT_ENABLE
 
-/* prevent stuck modifiers */
+/* if you have the underside leds uncomment  */
+// #define RGB_DI_PIN E2
 
-#define RGB_DI_PIN E2
 #ifdef RGB_DI_PIN
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 12

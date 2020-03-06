@@ -23,4 +23,8 @@ SLEEP_LED_ENABLE = no   # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes       # USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 BACKLIGHT_ENABLE = yes  # Enable keyboard backlight functionality
 AUDIO_ENABLE = no
-RGBLIGHT_ENABLE = yes
+
+# yes if your board is populated
+RGBLIGHT_ENABLE = no
+
+LAYOUTS = all 60_ansi 60_iso 60_ansi_split_bs_rshift 60_iso_split_bs_rshift 60_iso_split_rshift_with_nav_br 225u_arrow 2u_arrow minila 
