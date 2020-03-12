@@ -27,4 +27,4 @@ AUDIO_ENABLE = no
 # yes if your board is populated
 RGBLIGHT_ENABLE = no
 
-LAYOUTS = all 60_ansi 60_iso 60_ansi_split_bs_rshift 60_iso_split_bs_rshift 60_iso_split_rshift_with_nav_br 225u_arrow 2u_arrow minila 
+LAYOUTS = all 60_ansi 60_iso 60_ansi_split_bs_rshift 60_iso_split_bs_rshift 60_iso_split_rshift_with_nav_br 225u_arrow 2u_arrow minila minus_k31
