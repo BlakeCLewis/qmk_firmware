@@ -4,8 +4,8 @@
     "url": "",
     "maintainer": "qmk",
     "usb": {
-        "vid": "0xFEED",
-        "pid": "0x0000",
+        "vid": "0xBC10",
+        "pid": "0x3C01",
         "device_version": "0.0.1"
     },
     "features": {
@@ -25,7 +25,8 @@
     "backlight": {
         "driver": "timer",
         "pin": "F5",
-        "levels": 6
+        "levels": 8,
+	"on_state": 0
     },
     "indicators": {
         "caps_lock": "B2",
